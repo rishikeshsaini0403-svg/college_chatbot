@@ -213,58 +213,60 @@
     </div>
 
 
-    <script>
-        let dark = false;
+   <script>
+    let dark = false;
 
-        function toggleDark() {
-            dark = !dark;
-            document.body.classList.toggle("dark");
-        }
+    function toggleDark() {
+        dark = !dark;
+        document.body.classList.toggle("dark");
+    }
 
-        async function sendMessage() {
-            let txt = document.getElementById("text").value.trim();
-            if (!txt) return;
+    async function sendMessage() {
+        let txt = document.getElementById("text").value.trim();
+        if (!txt) return;
 
-            let msgBox = document.getElementById("messages");
+        let msgBox = document.getElementById("messages");
 
-            msgBox.innerHTML += `<div class="msg user">${txt}</div>`;
-            document.getElementById("text").value = "";
+        msgBox.innerHTML += `<div class="msg user">${txt}</div>`;
+        document.getElementById("text").value = "";
 
-            // Typing animation
-            let typing = document.createElement("div");
-            typing.classList.add("msg", "bot");
-            typing.innerHTML = `<div class="typing"><div></div><div></div><div></div></div>`;
-            msgBox.appendChild(typing);
-            msgBox.scrollTop = msgBox.scrollHeight;
+        // Typing animation
+        let typing = document.createElement("div");
+        typing.classList.add("msg", "bot");
+        typing.innerHTML = `<div class="typing"><div></div><div></div><div></div></div>`;
+        msgBox.appendChild(typing);
+        msgBox.scrollTop = msgBox.scrollHeight;
 
-            let response = await fetch("/get", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ msg: txt })
-            });
-
-            let data = await response.json();
-            typing.remove();
-
-            msgBox.innerHTML += `<div class="msg bot">${data.response}</div>`;
-            msgBox.scrollTop = msgBox.scrollHeight;
-        }
-
-        // ENTER key support
-        document.getElementById("text").addEventListener("keypress", function (e) {
-            if (e.key === "Enter") sendMessage();
+        // IMPORTANT FIX: Render API URL here
+        let response = await fetch("https://college-chatbot-wzap.onrender.com/get", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ msg: txt })
         });
 
-        // Voice recognition 🎤
-        function startVoice() {
-            const rec = new webkitSpeechRecognition();
-            rec.lang = "en-US";
-            rec.onresult = function (e) {
-                document.getElementById("text").value = e.results[0][0].transcript;
-            };
-            rec.start();
-        }
-    </script>
+        let data = await response.json();
+        typing.remove();
+
+        msgBox.innerHTML += `<div class="msg bot">${data.response}</div>`;
+        msgBox.scrollTop = msgBox.scrollHeight;
+    }
+
+    // ENTER key support
+    document.getElementById("text").addEventListener("keypress", function (e) {
+        if (e.key === "Enter") sendMessage();
+    });
+
+    // Voice recognition 🎤
+    function startVoice() {
+        const rec = new webkitSpeechRecognition();
+        rec.lang = "en-US";
+        rec.onresult = function (e) {
+            document.getElementById("text").value = e.results[0][0].transcript;
+        };
+        rec.start();
+    }
+</script>
+
 
 </body>
 
