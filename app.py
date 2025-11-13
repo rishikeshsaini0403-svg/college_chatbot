@@ -3,10 +3,8 @@ import pickle, json, numpy as np, os
 
 app = Flask(__name__, template_folder="templates")
 
-
 # Load dataset
 data = json.load(open("Data/intents.json"))
-
 
 # Load model if exists, otherwise fallback
 model_path = "model/intent_model.pkl"
@@ -16,13 +14,14 @@ model = None
 vectorizer = None
 
 try:
-    if os.path.getsize(model_path) > 0:
+    if os.path.exists(model_path) and os.path.getsize(model_path) > 0:
         model = pickle.load(open(model_path, "rb"))
-    if os.path.getsize(vec_path) > 0:
+    if os.path.exists(vec_path) and os.path.getsize(vec_path) > 0:
         vectorizer = pickle.load(open(vec_path, "rb"))
 except:
     model = None
     vectorizer = None
+
 
 def chatbot_response(text):
     text_lower = text.lower()
@@ -43,17 +42,31 @@ def chatbot_response(text):
 
     return "Sorry, I didn’t understand that. Please try again."
 
+
 @app.route("/")
 def home():
     return render_template("index.html")
 
-@app.route("/get", methods=["POST"])
-def chat():
-    msg = request.form.get("msg")
+
+# --------- FIXED ROUTE (POST JSON + GET EASY SUPPORT) ---------
+@app.route("/get", methods=["GET", "POST"])
+def get_response():
+    if request.method == "POST":
+        # JSON body support
+        data_json = request.get_json()
+        msg = data_json.get("msg") if data_json else None
+    else:
+        # GET fallback support
+        msg = request.args.get("msg")
+
+    if not msg:
+        return jsonify({"response": "Please type something!"})
+
     reply = chatbot_response(msg)
-    return jsonify({"reply": reply})
+    return jsonify({"response": reply})
+
+
+# --------------------------------------------------------------
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
