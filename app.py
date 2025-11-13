@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request, jsonify
 import pickle, json, numpy as np, os
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates")
+
 
 # Load dataset
 data = json.load(open("Data/intents.json"))
@@ -54,4 +55,5 @@ def chat():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
