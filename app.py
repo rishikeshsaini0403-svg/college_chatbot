@@ -4,7 +4,8 @@ import pickle, json, numpy as np, os
 app = Flask(__name__)
 
 # Load dataset
-data = json.load(open("data/intents.json"))
+data = json.load(open("Data/intents.json"))
+
 
 # Load model if exists, otherwise fallback
 model_path = "model/intent_model.pkl"
@@ -53,3 +54,4 @@ def chat():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
