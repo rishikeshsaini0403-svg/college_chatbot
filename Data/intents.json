@@ -4,266 +4,304 @@
     {
       "intent": "greeting",
       "patterns": [
-        "hello", "hi", "hey", "good morning", "good afternoon",
-        "namaste", "hii bot", "hey there", "hi assistant"
+        "hello",
+        "hi",
+        "hey",
+        "good morning",
+        "good evening",
+        "are you there",
+        "hi bot",
+        "hello assistant"
       ],
       "responses": [
-        "Hello! How can I help you today?",
-        "Hi there! Ask me anything about JECRC.",
-        "Greetings! How may I assist you?"
+        "Hello! How can I assist you today?",
+        "Hi there! 👋 What would you like to know?",
+        "Hello! I'm here to answer your JECRC related questions."
       ]
     },
 
     {
       "intent": "goodbye",
-      "patterns": ["bye", "good night", "see you", "ok bye"],
+      "patterns": [
+        "bye",
+        "goodbye",
+        "see you",
+        "talk to you later",
+        "thanks bye"
+      ],
       "responses": [
         "Goodbye! Have a great day!",
         "See you soon!",
-        "Bye! Feel free to ask anytime."
+        "Bye! Reach out anytime 😊"
       ]
     },
 
     {
-      "intent": "thanks",
-      "patterns": ["thank you", "thanks", "shukriya", "thx"],
-      "responses": ["You're welcome!", "Happy to help!", "Anytime!"]
+      "intent": "thank_you",
+      "patterns": [
+        "thanks",
+        "thank you",
+        "thank u",
+        "thanks a lot"
+      ],
+      "responses": [
+        "You're welcome!",
+        "Happy to help 😊",
+        "Anytime!"
+      ]
     },
 
+    ------------------------------------------------
+    -- ADMISSION (8 QUESTIONS)
+    ------------------------------------------------
+
     {
-      "intent": "exam_schedule",
-      "patterns": ["when are exams", "exam timetable", "exam dates", "mid sem kab h", "end sem kab h"],
+      "intent": "admission_process",
+      "patterns": [
+        "how to apply for admission",
+        "admission process",
+        "how can i take admission",
+        "jecrc admission",
+        "btech admission",
+        "admission steps",
+        "registration process"
+      ],
       "responses": [
-        "Mid-sem exams start in October and end-sem in December. Check JECRC portal for detailed timetable."
+        "JECRC admissions are based on online registration through the official website. You must fill the application form, upload required documents, and proceed with counseling.",
+        "To take admission, visit JECRC's official website and complete the application form. A counselor will guide you through the next steps."
       ]
     },
 
     {
-      "intent": "internal_marks",
-      "patterns": ["internal marks", "sessional marks", "internal assessment"],
+      "intent": "eligibility_btech",
+      "patterns": [
+        "btech eligibility",
+        "who can take btech admission",
+        "minimum marks for btech",
+        "criteria for btech",
+        "btech requirement"
+      ],
       "responses": [
-        "Internal marks are based on assignments, attendance, quizzes and internals. Check ERP for updates."
+        "Eligibility for B.Tech: Minimum 45% in PCM (40% for reserved categories).",
+        "For B.Tech admission, you need 45% marks in Physics, Chemistry, and Mathematics."
       ]
     },
 
     {
-      "intent": "attendance_requirement",
-      "patterns": ["minimum attendance", "attendance rule", "short attendance rule"],
+      "intent": "admission_documents",
+      "patterns": [
+        "documents required for admission",
+        "admission documents",
+        "what documents needed for jecrc",
+        "papers needed for admission"
+      ],
       "responses": [
-        "Minimum 75% attendance is required to appear in end-sem exams."
+        "Required documents: 10th & 12th marksheet, Transfer Certificate, Migration Certificate, Aadhar Card, Photographs, and Entrance Exam Scorecard (if applicable)."
       ]
     },
 
     {
-      "intent": "holiday_list",
-      "patterns": ["holiday list", "college holidays", "vacation kab h"],
+      "intent": "admission_contact",
+      "patterns": [
+        "admission helpline",
+        "contact for admission",
+        "counselor number",
+        "admission phone number"
+      ],
       "responses": [
-        "Holiday list is available on the JECRC website under Academic Calendar."
+        "You can contact JECRC admission helpline at +91-141-1234567 (example).",
+        "For admission queries, please visit the JECRC campus admission cell."
+      ]
+    },
+
+    ------------------------------------------------
+    -- FEES (5 QUESTIONS)
+    ------------------------------------------------
+
+    {
+      "intent": "btech_fees",
+      "patterns": [
+        "btech fees",
+        "what is btech fees",
+        "btech fee structure",
+        "engineering fees"
+      ],
+      "responses": [
+        "B.Tech fees at JECRC are approx ₹90,000–₹1,10,000 per year (varies by branch). Please verify with the official fee structure.",
+        "The yearly B.Tech fees generally range around ₹1,00,000."
       ]
     },
 
     {
-      "intent": "fees_enquiry",
-      "patterns": ["fees kitni h", "semester fees", "fee structure", "payment mode"],
+      "intent": "hostel_fees",
+      "patterns": [
+        "hostel fees",
+        "what is hostel fee",
+        "hostel charges",
+        "girls hostel fees",
+        "boys hostel fees"
+      ],
       "responses": [
-        "The detailed fee structure is available on the JECRC University website under ‘Admissions’."
+        "Hostel fees at JECRC are approx ₹85,000–₹1,10,000 per year depending on room type.",
+        "AC and Non-AC room fees vary. Please check with the hostel office for latest details."
       ]
     },
 
     {
-      "intent": "library_info",
-      "patterns": ["library timing", "library ka time", "books kaise milegi"],
+      "intent": "transport_fees",
+      "patterns": [
+        "bus fee",
+        "transport charges",
+        "jecrc bus fees",
+        "transport fee"
+      ],
       "responses": [
-        "Library timings are 9 AM - 7 PM on working days.",
-        "Books can be issued using your student ID card."
+        "Transport fees depend on your pickup location and route. Contact the transport office for accurate details.",
+        "Bus fee varies by distance, generally between ₹20,000–₹35,000 per year."
+      ]
+    },
+
+    ------------------------------------------------
+    -- HOSTEL (6 QUESTIONS)
+    ------------------------------------------------
+
+    {
+      "intent": "hostel_facilities",
+      "patterns": [
+        "hostel facility",
+        "hostel me kya milta h",
+        "hostel facilities",
+        "is hostel good"
+      ],
+      "responses": [
+        "JECRC hostel provides furnished rooms, mess, wifi, gym, laundry, and 24/7 security.",
+        "Facilities include WiFi, RO water, power backup, sports area, and common rooms."
       ]
     },
 
     {
-      "intent": "transport_info",
-      "patterns": ["bus timing", "transport facility", "transport fees"],
+      "intent": "hostel_rules",
+      "patterns": [
+        "hostel rules",
+        "hostel timing",
+        "girls hostel timing",
+        "entry timing hostel"
+      ],
       "responses": [
-        "JECRC provides transport across Jaipur. Visit transport office for route details."
+        "Girls hostel entry timing is usually before 7:30 PM (varies). Boys hostel rules depend on block guidelines.",
+        "All students must follow campus discipline and hostel timings as per the warden's instructions."
+      ]
+    },
+
+    ------------------------------------------------
+    -- PLACEMENT (6 QUESTIONS)
+    ------------------------------------------------
+
+    {
+      "intent": "placements",
+      "patterns": [
+        "placement",
+        "placements jecrc",
+        "job opportunities",
+        "how is placement",
+        "campus placement"
+      ],
+      "responses": [
+        "JECRC placement is strong with 200+ recruiters every year.",
+        "Top companies like TCS, Accenture, Infosys, Capgemini, and Amazon visit campus."
       ]
     },
 
     {
-      "intent": "hostel_info",
-      "patterns": ["hostel rules", "hostel timing", "mess timing"],
+      "intent": "highest_package",
+      "patterns": [
+        "highest package",
+        "max salary",
+        "highest placement",
+        "top package"
+      ],
       "responses": [
-        "Hostel timings vary for boys & girls. Check notice board for updates."
+        "Highest package is often above ₹30 LPA depending on the recruiter.",
+        "Every year students secure multiple high-paying offers from top MNCs."
+      ]
+    },
+
+    ------------------------------------------------
+    -- EXAMS (6 QUESTIONS)
+    ------------------------------------------------
+
+    {
+      "intent": "exam_dates",
+      "patterns": [
+        "exam kab h",
+        "exams date",
+        "midterm kab h",
+        "semester exam"
+      ],
+      "responses": [
+        "Mid-term and semester exam schedules are released by the examination cell.",
+        "Please check the official JECRC academic calendar for exact exam dates."
       ]
     },
 
     {
-      "intent": "department_info",
-      "patterns": ["cse department", "ece department", "it department", "mechanical department"],
+      "intent": "results",
+      "patterns": [
+        "result kab aayega",
+        "exam result",
+        "jecrc result",
+        "results date"
+      ],
       "responses": [
-        "JECRC University has multiple departments including CSE, IT, ECE, Civil, Mechanical, Management, Law, etc."
+        "Results are usually declared within a few weeks after the exams.",
+        "You can check your result on the official JECRC student portal."
+      ]
+    },
+
+    ------------------------------------------------
+    -- GENERAL CAMPUS (5 QUESTIONS)
+    ------------------------------------------------
+
+    {
+      "intent": "canteen",
+      "patterns": [
+        "canteen",
+        "food court",
+        "mess food",
+        "khana kaisa h"
+      ],
+      "responses": [
+        "JECRC has multiple canteens and food courts offering good quality food.",
+        "Hostel mess provides veg meals and weekly special menus."
       ]
     },
 
     {
-      "intent": "faculty_info",
-      "patterns": ["cse faculty list", "teacher details", "faculty info"],
+      "intent": "library",
+      "patterns": [
+        "library",
+        "study room",
+        "books issue",
+        "library timing"
+      ],
       "responses": [
-        "Faculty details are listed on JECRC University's official website under the Faculty section."
-      ]
-    },
-
-    {
-      "intent": "hod_generic",
-      "patterns": ["hod name", "branch hod", "department head"],
-      "responses": [
-        "You can find HOD details on JECRC University's website under the faculty section."
-      ]
-    },
-
-    {
-      "intent": "placement_cell",
-      "patterns": ["placement office", "placement cell", "tpo contact"],
-      "responses": [
-        "Visit JECRC Training & Placement Cell for internships and placements."
-      ]
-    },
-
-    {
-      "intent": "placement_stats",
-      "patterns": ["placement percentage", "highest package", "average package"],
-      "responses": [
-        "JECRC has strong placement statistics. Check the official website for detailed data."
-      ]
-    },
-
-    {
-      "intent": "lab_info",
-      "patterns": ["lab timing", "computer lab", "lab rules"],
-      "responses": [
-        "Laboratories operate 9 AM - 5 PM. Students must follow all safety guidelines."
-      ]
-    },
-
-    {
-      "intent": "wifi_info",
-      "patterns": ["wifi password", "campus wifi", "internet issue"],
-      "responses": [
-        "WiFi credentials are issued through the IT department. Visit the IT Help Desk."
-      ]
-    },
-
-    {
-      "intent": "erp_help",
-      "patterns": ["erp login", "erp not working", "erp password reset"],
-      "responses": [
-        "For ERP issues, contact the IT Support Team or ERP helpdesk."
-      ]
-    },
-
-    {
-      "intent": "ragging_rules",
-      "patterns": ["ragging complaint", "anti ragging", "ragging rules"],
-      "responses": [
-        "Ragging is strictly prohibited. Contact Anti-Ragging Cell immediately if needed."
-      ]
-    },
-
-    {
-      "intent": "event_info",
-      "patterns": ["college events", "upcoming events", "cultural fest"],
-      "responses": [
-        "JECRC hosts Renaissance (Cultural Fest), Hackathons, and multiple tech events."
-      ]
-    },
-
-    {
-      "intent": "canteen_info",
-      "patterns": ["canteen timing", "canteen menu"],
-      "responses": [
-        "Canteen operates from 9 AM to 6 PM with multiple food options."
-      ]
-    },
-
-    {
-      "intent": "scholarship_info",
-      "patterns": ["scholarship", "fee waiver", "scholarship eligibility"],
-      "responses": [
-        "JECRC offers various merit-based scholarships. Check Admissions > Scholarships."
-      ]
-    },
-
-    {
-      "intent": "sports_info",
-      "patterns": ["sports facility", "gym", "football ground"],
-      "responses": [
-        "Sports facilities include cricket, football, basketball, gym, and indoor games."
-      ]
-    },
-
-    {
-      "intent": "medical_room",
-      "patterns": ["medical room", "first aid", "doctor available"],
-      "responses": [
-        "Medical room is available during working hours with first-aid."
+        "JECRC library offers thousands of books, digital resources and long study hours.",
+        "Library timing varies by exam season; please contact library staff."
       ]
     },
 
     {
       "intent": "id_card",
-      "patterns": ["id card", "id card lost", "duplicate id card"],
+      "patterns": [
+        "id card",
+        "lost id card",
+        "duplicate id",
+        "how to get id"
+      ],
       "responses": [
-        "ID cards are issued by the admin office. For lost IDs, apply for duplicate in accounts section."
-      ]
-    },
-
-    {
-      "intent": "exam_results",
-      "patterns": ["result kab aayega", "exam result", "marks kab milenge"],
-      "responses": [
-        "Results are typically declared within 15–30 days after exams. Check ERP regularly."
-      ]
-    },
-
-    {
-      "intent": "class_timing",
-      "patterns": ["class timing", "lecture timing", "class kab start hoti h"],
-      "responses": [
-        "Classes usually run from 9:15 AM to 4:30 PM depending on timetable."
-      ]
-    },
-
-    {
-      "intent": "timetable",
-      "patterns": ["timetable", "class timetable", "schedule"],
-      "responses": [
-        "Class timetable is available in ERP and department notice board."
-      ]
-    },
-
-    {
-      "intent": "lost_and_found",
-      "patterns": ["lost item", "found item", "mera card kho gaya"],
-      "responses": [
-        "Lost items can be reported or collected from the security office."
-      ]
-    },
-
-    {
-      "intent": "general_chit_chat",
-      "patterns": ["how are you", "who made you", "what can you do"],
-      "responses": [
-        "I'm your JECRC AI Assistant! I help answer college-related questions.",
-        "I'm doing great! How may I help you?"
-      ]
-    },
-
-    {
-      "intent": "fallback",
-      "patterns": ["???", "unknown", "repeat", "say again"],
-      "responses": [
-        "I didn’t understand that. Could you rephrase?",
-        "Sorry, can you ask it differently?"
+        "ID cards are issued by admin office. For lost ID, apply for a duplicate at accounts section.",
+        "You can collect your ID from the administrative block."
       ]
     }
-
   ]
 }
