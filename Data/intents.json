@@ -1,6 +1,5 @@
 {
   "intents": [
-
     {
       "intent": "greeting",
       "patterns": [
@@ -50,10 +49,6 @@
         "Anytime!"
       ]
     },
-
-    ------------------------------------------------
-    -- ADMISSION (8 QUESTIONS)
-    ------------------------------------------------
 
     {
       "intent": "admission_process",
@@ -114,10 +109,6 @@
       ]
     },
 
-    ------------------------------------------------
-    -- FEES (5 QUESTIONS)
-    ------------------------------------------------
-
     {
       "intent": "btech_fees",
       "patterns": [
@@ -161,10 +152,6 @@
       ]
     },
 
-    ------------------------------------------------
-    -- HOSTEL (6 QUESTIONS)
-    ------------------------------------------------
-
     {
       "intent": "hostel_facilities",
       "patterns": [
@@ -192,10 +179,6 @@
         "All students must follow campus discipline and hostel timings as per the warden's instructions."
       ]
     },
-
-    ------------------------------------------------
-    -- PLACEMENT (6 QUESTIONS)
-    ------------------------------------------------
 
     {
       "intent": "placements",
@@ -226,10 +209,6 @@
       ]
     },
 
-    ------------------------------------------------
-    -- EXAMS (6 QUESTIONS)
-    ------------------------------------------------
-
     {
       "intent": "exam_dates",
       "patterns": [
@@ -257,10 +236,6 @@
         "You can check your result on the official JECRC student portal."
       ]
     },
-
-    ------------------------------------------------
-    -- GENERAL CAMPUS (5 QUESTIONS)
-    ------------------------------------------------
 
     {
       "intent": "canteen",
